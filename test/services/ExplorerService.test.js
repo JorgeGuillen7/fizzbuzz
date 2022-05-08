@@ -26,4 +26,12 @@ describe('Tests for ExplorerService class', () => {
 			},
 		]);
 	});
+
+	test('Method to get the amount of explorers by mission', () => {
+		const AmountOfExplorersInNode =
+			ExplorerService.getAmountOfExplorersByMission(jsonFile, 'node');
+		expect(AmountOfExplorersInNode).toBe(
+			'There are 2 explorers in node mission'
+		);
+	});
 });
