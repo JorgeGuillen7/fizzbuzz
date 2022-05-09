@@ -34,7 +34,7 @@ describe('Tests for ExplorerService class', () => {
 		const AmountOfExplorersInNode =
 			ExplorerService.getAmountOfExplorersByMission(jsonFile, 'node');
 		expect(AmountOfExplorersInNode).toBe(
-			'There are 2 explorers in node mission'
+			'There are 4 explorers in node mission'
 		);
 	});
 
