@@ -22,4 +22,12 @@ describe("Tests for ExplorerController class", () => {
             "ajolonauta15",
         ]);
     });
+
+    test("Get the amount of explorers by mission", () => {
+        const amountOfExplorers =
+            ExplorerController.getExplorersAmountByMission("node");
+        expect(amountOfExplorers).toBe(
+            "There are 10 explorers in node mission"
+        );
+    });
 });
