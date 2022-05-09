@@ -1,5 +1,8 @@
 const Reader = require('./../../lib/utils/Reader');
 const ExplorerService = require('./../../lib/services/ExplorerService');
+const {
+	getAmountOfExplorersByMission,
+} = require('./../../lib/services/ExplorerService');
 
 const jsonFile = Reader.readJsonFile('test/data/explorersDemo.json');
 
@@ -33,5 +36,13 @@ describe('Tests for ExplorerService class', () => {
 		expect(AmountOfExplorersInNode).toBe(
 			'There are 2 explorers in node mission'
 		);
+	});
+
+	test("Method to get the explorers' usernames by mission", () => {
+		const usernamesInNode = ExplorerService.getExplorersUsernamesByMission(
+			jsonFile,
+			'node'
+		);
+		expect(usernamesInNode).toEqual(['ajolonauta1', 'ajolonauta3']);
 	});
 });
