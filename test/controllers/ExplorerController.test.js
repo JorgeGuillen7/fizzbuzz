@@ -1,3 +1,4 @@
+const FizzbuzzService = require("../../lib/services/FizzbuzzService");
 const ExplorerController = require("./../../lib/controllers/ExplorerController");
 
 describe("Tests for ExplorerController class", () => {
@@ -29,5 +30,10 @@ describe("Tests for ExplorerController class", () => {
         expect(amountOfExplorers).toBe(
             "There are 10 explorers in node mission"
         );
+    });
+
+    test("Get fizzbuzz validation with the score", () => {
+        const explorerScore = ExplorerController.applyFizzbuzzValidation(1);
+        expect(explorerScore).toEqual({ score: 1, trick: 1 });
     });
 });
